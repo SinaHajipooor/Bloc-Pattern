@@ -20,6 +20,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           child: Stack(
             children: [
               PageView(
+                physics: const BouncingScrollPhysics(),
                 children: [
                   _page(),
                   _page(),
