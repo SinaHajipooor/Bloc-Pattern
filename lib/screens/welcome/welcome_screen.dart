@@ -1,4 +1,5 @@
 import 'package:bloc_pattern/screens/welcome/bloc/welcome_blocs.dart';
+import 'package:bloc_pattern/screens/welcome/bloc/welcome_events.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -28,6 +29,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 alignment: Alignment.topCenter,
                 children: [
                   PageView(
+                    onPageChanged: (index) {
+                      state.page = index;
+                      BlocProvider.of<WelcomeBlock>(context).add(WelcomeEvent());
+                    },
                     physics: const BouncingScrollPhysics(),
                     children: [
                       _page(1, context, 'next', 'First see Learning', 'Forget about a for of paper all knowldget in on learning', 'image path'),
@@ -38,6 +43,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   Positioned(
                     bottom: 100.h,
                     child: DotsIndicator(
+                      position: state.page,
                       dotsCount: 3,
                       decorator: DotsDecorator(
                         color: Colors.grey,
