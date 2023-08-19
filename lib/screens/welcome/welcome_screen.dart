@@ -49,7 +49,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         color: Colors.grey,
                         activeColor: Colors.blue,
                         size: const Size.square(8),
-                        activeSize: const Size(10, 8),
+                        activeSize: const Size(18, 8),
                         activeShape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5),
                         ),
