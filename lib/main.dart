@@ -1,3 +1,5 @@
+import 'package:bloc_pattern/screens/welcome/bloc/welcome_blocs.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'app/imports/app_imports.dart';
@@ -11,10 +13,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      home: ScreenUtilInit(builder: (context, child) => const HomeScreen()),
+    return BlocProvider(
+      create: (context) => WelcomeBlock(),
+      child: ScreenUtilInit(
+        builder: (context, child) => const MaterialApp(
+          title: 'Flutter Demo',
+          debugShowCheckedModeBanner: false,
+          home: HomeScreen(),
+        ),
+      ),
     );
   }
 }
