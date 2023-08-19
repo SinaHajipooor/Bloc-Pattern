@@ -1,6 +1,10 @@
+import 'package:bloc_pattern/screens/welcome/bloc/welcome_blocs.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'bloc/welcome_states.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
@@ -15,37 +19,41 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     return Container(
       color: Colors.white,
       child: Scaffold(
-        body: Container(
-          margin: EdgeInsets.only(top: 34.h),
-          width: 375.w,
-          child: Stack(
-            alignment: Alignment.topCenter,
-            children: [
-              PageView(
-                physics: const BouncingScrollPhysics(),
+        body: BlocBuilder<WelcomeBlock, WelcomeState>(
+          builder: (context, state) {
+            return Container(
+              margin: EdgeInsets.only(top: 34.h),
+              width: 375.w,
+              child: Stack(
+                alignment: Alignment.topCenter,
                 children: [
-                  _page(1, context, 'next', 'First see Learning', 'Forget about a for of paper all knowldget in on learning', 'image path'),
-                  _page(2, context, 'next', 'Connect with everyone ', 'Always keep in touch with your tutor & friend Lets get connected', 'image path'),
-                  _page(3, context, 'Get started', 'Always Facinated Learning', 'Anywhere anytime . The time is at our discrition so study whenever you want', 'image path'),
+                  PageView(
+                    physics: const BouncingScrollPhysics(),
+                    children: [
+                      _page(1, context, 'next', 'First see Learning', 'Forget about a for of paper all knowldget in on learning', 'image path'),
+                      _page(2, context, 'next', 'Connect with everyone ', 'Always keep in touch with your tutor & friend Lets get connected', 'image path'),
+                      _page(3, context, 'Get started', 'Always Facinated Learning', 'Anywhere anytime . The time is at our discrition so study whenever you want', 'image path'),
+                    ],
+                  ),
+                  Positioned(
+                    bottom: 100.h,
+                    child: DotsIndicator(
+                      dotsCount: 3,
+                      decorator: DotsDecorator(
+                        color: Colors.grey,
+                        activeColor: Colors.blue,
+                        size: const Size.square(8),
+                        activeSize: const Size(10, 8),
+                        activeShape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                      ),
+                    ),
+                  )
                 ],
               ),
-              Positioned(
-                bottom: 100.h,
-                child: DotsIndicator(
-                  dotsCount: 3,
-                  decorator: DotsDecorator(
-                    color: Colors.grey,
-                    activeColor: Colors.blue,
-                    size: const Size.square(8),
-                    activeSize: const Size(10, 8),
-                    activeShape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                  ),
-                ),
-              )
-            ],
-          ),
+            );
+          },
         ),
       ),
     );
