@@ -1,3 +1,4 @@
+import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -18,6 +19,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           margin: EdgeInsets.only(top: 34.h),
           width: 375.w,
           child: Stack(
+            alignment: Alignment.topCenter,
             children: [
               PageView(
                 physics: const BouncingScrollPhysics(),
@@ -27,6 +29,21 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   _page(3, context, 'Get started', 'Always Facinated Learning', 'Anywhere anytime . The time is at our discrition so study whenever you want', 'image path'),
                 ],
               ),
+              Positioned(
+                bottom: 100.h,
+                child: DotsIndicator(
+                  dotsCount: 3,
+                  decorator: DotsDecorator(
+                    color: Colors.grey,
+                    activeColor: Colors.blue,
+                    size: const Size.square(8),
+                    activeSize: const Size(10, 8),
+                    activeShape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                  ),
+                ),
+              )
             ],
           ),
         ),
