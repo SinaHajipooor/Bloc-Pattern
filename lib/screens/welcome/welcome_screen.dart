@@ -23,8 +23,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 physics: const BouncingScrollPhysics(),
                 children: [
                   _page(1, context, 'next', 'First see Learning', 'Forget about a for of paper all knowldget in on learning', 'image path'),
-                  _page(2, context, 'next', 'First see Learning', 'Forget about a for of paper all knowldget in on learning', 'image path'),
-                  _page(3, context, 'Get started', 'First see Learning', 'Forget about a for of paper all knowldget in on learning', 'image path'),
+                  _page(2, context, 'next', 'Connect with everyone ', 'Always keep in touch with your tutor & friend Lets get connected', 'image path'),
+                  _page(3, context, 'Get started', 'Always Facinated Learning', 'Anywhere anytime . The time is at our discrition so study whenever you want', 'image path'),
                 ],
               ),
             ],
