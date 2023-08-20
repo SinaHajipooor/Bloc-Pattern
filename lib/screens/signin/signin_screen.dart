@@ -25,7 +25,7 @@ class _SigninScreenState extends State<SigninScreen> {
             child: Column(
               children: [
                 buildThirdPartyLogin(context),
-                reusableText('Or use your email account login'),
+                reusableText('Or use your email account to login'),
               ],
             ),
           ),
