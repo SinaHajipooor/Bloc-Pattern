@@ -3,11 +3,14 @@ import 'package:bloc_pattern/widgets/signin/reusable_icon.dart';
 
 // we need context to access the bloc
 Widget buildThirdPartyLogin(BuildContext context) {
-  return SizedBox(
+  return Container(
+    margin: EdgeInsets.only(top: 40.h, bottom: 20.h),
     child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         reusableIcon('google'),
         reusableIcon('apple'),
+        reusableIcon('facebook'),
       ],
     ),
   );
