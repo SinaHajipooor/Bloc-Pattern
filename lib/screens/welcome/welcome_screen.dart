@@ -83,7 +83,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             if (index < 3) {
               pageController.animateToPage(index, duration: const Duration(milliseconds: 700), curve: Curves.easeIn);
             } else {
-              Navigator.of(context).pushReplacementNamed(HomeScreen.routeName);
+              Navigator.of(context).pushNamedAndRemoveUntil(HomeScreen.routeName, (route) => false);
             }
           },
           child: Container(
