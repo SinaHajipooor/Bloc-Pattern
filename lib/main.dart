@@ -1,8 +1,3 @@
-import 'package:bloc_pattern/app/routes/app_routes.dart';
-import 'package:bloc_pattern/screens/welcome/bloc/welcome_blocs.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'app/imports/app_imports.dart';
 
 void main() {
