@@ -1,4 +1,6 @@
 import 'package:bloc_pattern/app/imports/app_imports.dart';
+import 'package:bloc_pattern/widgets/signin/signin_app_bar.dart';
+import 'package:bloc_pattern/widgets/signin/third_party_login.dart';
 import 'package:flutter/material.dart';
 
 class SigninScreen extends StatefulWidget {
@@ -16,18 +18,13 @@ class _SigninScreenState extends State<SigninScreen> {
       color: Colors.white,
       child: SafeArea(
         child: Scaffold(
-          appBar: AppBar(
-            centerTitle: true,
-            bottom: PreferredSize(
-              preferredSize: const Size.fromHeight(1),
-              child: Container(
-                color: Colors.grey.withOpacity(0.5),
-                height: 1,
-              ),
-            ),
-            title: Text(
-              'Log in',
-              style: TextStyle(color: Colors.black, fontSize: 16.sp),
+          appBar: buildSigninAppBar(),
+          body: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Column(
+              children: [
+                buildThirdPartyLogin(context),
+              ],
             ),
           ),
         ),
