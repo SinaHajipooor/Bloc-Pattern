@@ -1,10 +1,6 @@
 import 'package:bloc_pattern/app/imports/app_imports.dart';
-import 'package:bloc_pattern/screens/welcome/bloc/welcome_blocs.dart';
 import 'package:bloc_pattern/screens/welcome/bloc/welcome_events.dart';
 import 'package:dots_indicator/dots_indicator.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'bloc/welcome_states.dart';
 
