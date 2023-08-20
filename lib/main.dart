@@ -13,8 +13,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => WelcomeBlock(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => WelcomeBlock()),
+      ],
       child: ScreenUtilInit(
         builder: (context, child) => const MaterialApp(
           title: 'Flutter Demo',
