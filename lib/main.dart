@@ -11,7 +11,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => WelcomeBlock()),
+        BlocProvider(
+          lazy: true, // if we set the lazt to false it means that flutter should create the bloc as soon as possible
+          create: (context) => WelcomeBlock(),
+        ),
       ],
       child: ScreenUtilInit(
         builder: (context, child) => MaterialApp(
