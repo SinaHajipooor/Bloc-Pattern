@@ -1,3 +1,4 @@
+import 'package:bloc_pattern/app/imports/app_imports.dart';
 import 'package:bloc_pattern/screens/welcome/bloc/welcome_blocs.dart';
 import 'package:bloc_pattern/screens/welcome/bloc/welcome_events.dart';
 import 'package:dots_indicator/dots_indicator.dart';
@@ -8,6 +9,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'bloc/welcome_states.dart';
 
 class WelcomeScreen extends StatefulWidget {
+  static const routeName = '/welcome-screen';
   const WelcomeScreen({super.key});
 
   @override
@@ -82,7 +84,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         ),
         GestureDetector(
           onTap: () {
-            if (index < 3) pageController.animateToPage(index, duration: const Duration(milliseconds: 700), curve: Curves.easeIn);
+            if (index < 3) {
+              pageController.animateToPage(index, duration: const Duration(milliseconds: 700), curve: Curves.easeIn);
+            } else {
+              Navigator.of(context).pushReplacementNamed(HomeScreen.routeName);
+            }
           },
           child: Container(
             margin: EdgeInsets.only(top: 100.h, left: 25.w, right: 25.w),
