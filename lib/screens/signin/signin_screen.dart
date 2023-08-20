@@ -1,7 +1,7 @@
- import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
 class SigninScreen extends StatefulWidget {
-static const routeName = '/signin-screen';
+  static const routeName = '/signin-screen';
   const SigninScreen({super.key});
 
   @override

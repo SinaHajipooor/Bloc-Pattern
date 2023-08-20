@@ -6,3 +6,5 @@ export 'package:flutter_bloc/flutter_bloc.dart';
 export 'package:flutter_screenutil/flutter_screenutil.dart';
 export 'package:bloc_pattern/screens/welcome/welcome_screen.dart';
 export 'package:bloc_pattern/screens/signin/signin_screen.dart';
+export 'package:bloc_pattern/screens/welcome/bloc/welcome_events.dart';
+export 'package:dots_indicator/dots_indicator.dart';

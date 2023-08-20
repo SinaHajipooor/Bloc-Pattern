@@ -1,6 +1,4 @@
 import 'package:bloc_pattern/app/imports/app_imports.dart';
-import 'package:bloc_pattern/screens/welcome/bloc/welcome_events.dart';
-import 'package:dots_indicator/dots_indicator.dart';
 
 import 'bloc/welcome_states.dart';
 
@@ -83,7 +81,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             if (index < 3) {
               pageController.animateToPage(index, duration: const Duration(milliseconds: 700), curve: Curves.easeIn);
             } else {
-              Navigator.of(context).pushNamedAndRemoveUntil(HomeScreen.routeName, (route) => false);
+              Navigator.of(context).pushNamedAndRemoveUntil(SigninScreen.routeName, (route) => false);
             }
           },
           child: Container(
