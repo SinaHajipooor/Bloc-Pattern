@@ -15,6 +15,8 @@ class WelcomeScreen extends StatefulWidget {
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
+  // a controller to navigate between pages
+  PageController pageController = PageController(initialPage: 0);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -29,6 +31,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 alignment: Alignment.topCenter,
                 children: [
                   PageView(
+                    controller: pageController,
                     onPageChanged: (index) {
                       state.page = index;
                       BlocProvider.of<WelcomeBlock>(context).add(WelcomeEvent());
@@ -64,33 +67,38 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       ),
     );
   }
-}
 
-Widget _page(int index, BuildContext context, String buttonName, String title, String subtitle, String imagepath) {
-  return Column(
-    children: [
-      SizedBox(width: 345.w, height: 345.w, child: Image.asset(imagepath)),
-      SizedBox(
-        child: Text(title, style: TextStyle(color: Colors.black, fontSize: 24.sp)),
-      ),
-      Container(
-        width: 375.w,
-        padding: EdgeInsets.only(left: 30.w, right: 30.w),
-        child: Text(subtitle, style: TextStyle(color: Colors.black.withOpacity(0.5), fontSize: 14.sp)),
-      ),
-      Container(
-        margin: EdgeInsets.only(top: 100.h, left: 25.w, right: 25.w),
-        width: 325.w,
-        height: 50.h,
-        decoration: BoxDecoration(
-          color: Colors.blue,
-          borderRadius: BorderRadius.all(Radius.circular(15.w)),
-          boxShadow: [
-            BoxShadow(color: Colors.grey.withOpacity(0.1), spreadRadius: 1, blurRadius: 2, offset: const Offset(0, 1)),
-          ],
+  Widget _page(int index, BuildContext context, String buttonName, String title, String subtitle, String imagepath) {
+    return Column(
+      children: [
+        SizedBox(width: 345.w, height: 345.w, child: Image.asset(imagepath, fit: BoxFit.cover)),
+        SizedBox(
+          child: Text(title, style: TextStyle(color: Colors.black, fontSize: 24.sp)),
         ),
-        child: Center(child: Text(buttonName, style: TextStyle(color: Colors.white, fontSize: 16.sp))),
-      )
-    ],
-  );
+        Container(
+          width: 375.w,
+          padding: EdgeInsets.only(left: 30.w, right: 30.w),
+          child: Text(subtitle, style: TextStyle(color: Colors.black.withOpacity(0.5), fontSize: 14.sp)),
+        ),
+        GestureDetector(
+          onTap: () {
+            if (index < 3) pageController.animateToPage(index, duration: const Duration(milliseconds: 700), curve: Curves.easeIn);
+          },
+          child: Container(
+            margin: EdgeInsets.only(top: 100.h, left: 25.w, right: 25.w),
+            width: 325.w,
+            height: 50.h,
+            decoration: BoxDecoration(
+              color: Colors.blue,
+              borderRadius: BorderRadius.all(Radius.circular(15.w)),
+              boxShadow: [
+                BoxShadow(color: Colors.grey.withOpacity(0.1), spreadRadius: 1, blurRadius: 2, offset: const Offset(0, 1)),
+              ],
+            ),
+            child: Center(child: Text(buttonName, style: TextStyle(color: Colors.white, fontSize: 16.sp))),
+          ),
+        )
+      ],
+    );
+  }
 }
