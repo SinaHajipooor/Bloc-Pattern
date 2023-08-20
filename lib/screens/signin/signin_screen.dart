@@ -1,4 +1,5 @@
 import 'package:bloc_pattern/app/imports/app_imports.dart';
+import 'package:bloc_pattern/widgets/signin/reusable_text.dart';
 import 'package:bloc_pattern/widgets/signin/signin_app_bar.dart';
 import 'package:bloc_pattern/widgets/signin/third_party_login.dart';
 import 'package:flutter/material.dart';
@@ -24,6 +25,7 @@ class _SigninScreenState extends State<SigninScreen> {
             child: Column(
               children: [
                 buildThirdPartyLogin(context),
+                reusableText('Or use your email account login'),
               ],
             ),
           ),
