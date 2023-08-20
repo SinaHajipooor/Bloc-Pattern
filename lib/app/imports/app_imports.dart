@@ -4,3 +4,4 @@ export 'package:bloc_pattern/app/routes/app_routes.dart';
 export 'package:bloc_pattern/screens/welcome/bloc/welcome_blocs.dart';
 export 'package:flutter_bloc/flutter_bloc.dart';
 export 'package:flutter_screenutil/flutter_screenutil.dart';
+export 'package:bloc_pattern/screens/welcome/welcome_screen.dart';

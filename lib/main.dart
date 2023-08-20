@@ -15,10 +15,10 @@ class MyApp extends StatelessWidget {
       ],
       child: ScreenUtilInit(
         builder: (context, child) => MaterialApp(
-          title: 'Flutter Demo',
+          title: 'Selling App',
           debugShowCheckedModeBanner: false,
           routes: appRoutes,
-          home: const HomeScreen(),
+          home: const WelcomeScreen(),
         ),
       ),
     );
