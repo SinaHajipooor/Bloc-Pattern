@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
           title: 'Selling App',
           debugShowCheckedModeBanner: false,
           routes: appRoutes,
+          theme: ThemeData(appBarTheme: const AppBarTheme(backgroundColor: Colors.white, elevation: 0)),
           home: const WelcomeScreen(),
         ),
       ),
