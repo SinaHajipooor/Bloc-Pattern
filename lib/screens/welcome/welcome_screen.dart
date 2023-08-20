@@ -35,9 +35,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     },
                     physics: const BouncingScrollPhysics(),
                     children: [
-                      _page(1, context, 'next', 'First see Learning', 'Forget about a for of paper all knowldget in on learning', 'image path'),
-                      _page(2, context, 'next', 'Connect with everyone ', 'Always keep in touch with your tutor & friend Lets get connected', 'image path'),
-                      _page(3, context, 'Get started', 'Always Facinated Learning', 'Anywhere anytime . The time is at our discrition so study whenever you want', 'image path'),
+                      _page(1, context, 'next', 'First see Learning', 'Forget about a for of paper all knowldget in on learning', 'assets/images/reading.png'),
+                      _page(2, context, 'next', 'Connect with everyone ', 'Always keep in touch with your tutor & friend Lets get connected', 'assets/images/boy.png'),
+                      _page(3, context, 'Get started', 'Always Facinated Learning', 'Anywhere anytime . The time is at our discrition so study whenever you want', 'assets/images/man.png'),
                     ],
                   ),
                   Positioned(
@@ -69,7 +69,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 Widget _page(int index, BuildContext context, String buttonName, String title, String subtitle, String imagepath) {
   return Column(
     children: [
-      SizedBox(width: 345.w, height: 345.w, child: const Text('Image one')),
+      SizedBox(width: 345.w, height: 345.w, child: Image.asset(imagepath)),
       SizedBox(
         child: Text(title, style: TextStyle(color: Colors.black, fontSize: 24.sp)),
       ),
