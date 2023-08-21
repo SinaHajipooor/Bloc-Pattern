@@ -1,5 +1,6 @@
 import 'package:bloc_pattern/app/imports/app_imports.dart';
 import 'package:bloc_pattern/widgets/signin/forgot_password.dart';
+import 'package:bloc_pattern/widgets/signin/login_and_reg_button.dart';
 import 'package:bloc_pattern/widgets/signin/reusable_text.dart';
 import 'package:bloc_pattern/widgets/signin/signin_app_bar.dart';
 import 'package:bloc_pattern/widgets/signin/text_feild.dart';
@@ -42,6 +43,8 @@ class _SigninScreenState extends State<SigninScreen> {
                       SizedBox(height: 5.h),
                       buildTextFeild('Enter your password', 'password', 'lock'),
                       forgotPassword(),
+                      buildLoginAndRegButton('Log in', 'login'),
+                      buildLoginAndRegButton('Register', 'register'),
                     ],
                   ),
                 ),
