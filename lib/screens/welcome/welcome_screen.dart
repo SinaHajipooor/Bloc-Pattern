@@ -45,8 +45,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       position: state.page,
                       dotsCount: 3,
                       decorator: DotsDecorator(
-                        color: Colors.grey,
-                        activeColor: Colors.blue,
+                        color: AppColors.primaryThreeElementText,
+                        activeColor: AppColors.primaryElement,
                         size: const Size.square(8),
                         activeSize: const Size(18, 8),
                         activeShape: RoundedRectangleBorder(
@@ -69,12 +69,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       children: [
         SizedBox(width: 345.w, height: 345.w, child: Image.asset(imagepath, fit: BoxFit.cover)),
         SizedBox(
-          child: Text(title, style: TextStyle(color: Colors.black, fontSize: 24.sp)),
+          child: Text(title, style: TextStyle(color: AppColors.primaryText, fontSize: 24.sp)),
         ),
         Container(
           width: 375.w,
           padding: EdgeInsets.only(left: 30.w, right: 30.w),
-          child: Text(subtitle, style: TextStyle(color: Colors.black.withOpacity(0.5), fontSize: 14.sp)),
+          child: Text(subtitle, style: TextStyle(color: AppColors.primarySecondaryElementText, fontSize: 14.sp)),
         ),
         GestureDetector(
           onTap: () {
@@ -89,7 +89,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             width: 325.w,
             height: 50.h,
             decoration: BoxDecoration(
-              color: Colors.blue,
+              color: AppColors.primaryElement,
               borderRadius: BorderRadius.all(Radius.circular(15.w)),
               boxShadow: [
                 BoxShadow(color: Colors.grey.withOpacity(0.1), spreadRadius: 1, blurRadius: 2, offset: const Offset(0, 1)),
