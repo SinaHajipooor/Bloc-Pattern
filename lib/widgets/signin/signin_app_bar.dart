@@ -1,4 +1,5 @@
 import 'package:bloc_pattern/app/imports/app_imports.dart';
+import 'package:bloc_pattern/common/values/colors.dart';
 
 AppBar buildSigninAppBar() {
   return AppBar(
@@ -6,13 +7,13 @@ AppBar buildSigninAppBar() {
     bottom: PreferredSize(
       preferredSize: const Size.fromHeight(1),
       child: Container(
-        color: Colors.grey.withOpacity(0.5),
+        color: AppColors.primarySecondaryBackground,
         height: 1,
       ),
     ),
     title: Text(
       'Log in',
-      style: TextStyle(color: Colors.black, fontSize: 16.sp),
+      style: TextStyle(color: AppColors.primaryText, fontSize: 16.sp),
     ),
   );
 }
