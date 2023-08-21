@@ -35,7 +35,11 @@ class _SigninScreenState extends State<SigninScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       reusableText('Email'),
-                      buildTextFeild('Email', 'email'),
+                      SizedBox(height: 5.h),
+                      buildTextFeild('Enter your email address', 'email', 'user'),
+                      reusableText('Password'),
+                      SizedBox(height: 5.h),
+                      buildTextFeild('Enter your password', 'password', 'lock'),
                     ],
                   ),
                 ),
