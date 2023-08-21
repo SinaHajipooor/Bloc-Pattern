@@ -8,7 +8,7 @@ Widget buildTextFeild(String hintText, String textType, String iconName) {
     decoration: BoxDecoration(
       color: Colors.white,
       borderRadius: BorderRadius.all(Radius.circular(15.w)),
-      border: Border.all(color: Colors.black),
+      border: Border.all(color: AppColors.primaryFourElementText),
     ),
     child: Row(
       children: [
@@ -25,7 +25,7 @@ Widget buildTextFeild(String hintText, String textType, String iconName) {
             keyboardType: TextInputType.multiline,
             autocorrect: false,
             obscureText: textType == 'password',
-            style: TextStyle(color: Colors.black, fontFamily: 'Avenir', fontSize: 14.sp),
+            style: TextStyle(color: AppColors.primaryText, fontFamily: 'Avenir', fontSize: 14.sp),
             decoration: InputDecoration(
               hintText: hintText,
               border: const OutlineInputBorder(
@@ -48,7 +48,7 @@ Widget buildTextFeild(String hintText, String textType, String iconName) {
                   color: Colors.transparent,
                 ),
               ),
-              hintStyle: TextStyle(color: Colors.grey.withOpacity(0.5)),
+              hintStyle: const TextStyle(color: AppColors.primarySecondaryElementText),
             ),
           ),
         )
