@@ -10,10 +10,10 @@ Widget forgotPassword() {
       child: Text(
         'Forgot password',
         style: TextStyle(
-          color: Colors.black,
+          color: AppColors.primaryText,
           decoration: TextDecoration.underline,
           fontSize: 12.sp,
-          decorationColor: Colors.blue,
+          decorationColor: AppColors.primaryText,
         ),
       ),
     ),
