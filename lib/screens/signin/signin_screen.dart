@@ -30,7 +30,7 @@ class _SigninScreenState extends State<SigninScreen> {
                 Center(child: reusableText('Or use your email account to login')),
                 Container(
                   margin: EdgeInsets.only(top: 66.h),
-                  padding: EdgeInsets.only(left: 25.w),
+                  padding: EdgeInsets.only(left: 25.w, right: 25.w),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
