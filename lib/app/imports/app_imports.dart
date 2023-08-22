@@ -9,3 +9,5 @@ export 'package:bloc_pattern/screens/signin/sign_in_screen.dart';
 export 'package:bloc_pattern/screens/welcome/bloc/welcome_events.dart';
 export 'package:dots_indicator/dots_indicator.dart';
 export 'package:bloc_pattern/common/values/colors.dart';
+export 'package:bloc_pattern/screens/signin/bloc/sign_in_events.dart';
+export 'package:bloc_pattern/screens/signin/bloc/sign_in_states.dart';
