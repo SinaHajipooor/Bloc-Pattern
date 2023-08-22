@@ -40,7 +40,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     ],
                   ),
                   Positioned(
-                    bottom: 100.h,
+                    bottom: 80.h,
                     child: DotsIndicator(
                       position: state.page,
                       dotsCount: 3,
