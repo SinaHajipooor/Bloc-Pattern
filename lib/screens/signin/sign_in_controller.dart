@@ -19,6 +19,15 @@ class SignInController {
         if (emailAddress.isEmpty || password.isEmpty) return;
         //  get the credential from firebase
         final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(email: emailAddress, password: password);
+        if (credential.user == null) {}
+        if (!credential.user!.emailVerified) {}
+        // create the user
+        var user = credential.user;
+        if (user != null) {
+          // we got verified user from firebase
+        } else {
+          // we have error getting user from firebase
+        }
       }
     } catch (err) {}
   }
