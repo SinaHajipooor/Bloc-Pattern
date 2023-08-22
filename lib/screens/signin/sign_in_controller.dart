@@ -12,6 +12,10 @@ class SignInController {
       if (type == 'email') {
         //  the following line is just like this line : BlocProvider.of<SignInBloc>(context).state
         final state = context.read<SignInBloc>().state;
+        String emailAddress = state.email;
+        String password = state.password;
+        // validation
+        if (emailAddress.isEmpty || password.isEmpty) return;
       }
     } catch (err) {}
   }
