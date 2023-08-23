@@ -29,6 +29,8 @@ class SignInController {
           // we have error getting user from firebase
         }
       }
-    } catch (err) {}
+    } catch (err) {
+      rethrow;
+    }
   }
 }
